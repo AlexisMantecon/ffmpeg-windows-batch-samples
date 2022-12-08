@@ -1,7 +1,7 @@
 for /f "tokens=2 delims==" %%a in ('wmic OS Get localdatetime /value') do set "dt=%%a"
 set "YYYY=%dt:~0,4%" & set "mm=%dt:~4,2%"  & set "dd=%dt:~6,2%"
-set "HH=%dt:~8,2%"   & set "MM=%dt:~10,2%" & set "SS=%dt:~12,2%" & set "ff=%dt:~15,2%"
-set "fullstamp=%YYYY%-%mm%-%dd%_%HH%-%MM%-%SS%-%ff%"
+set "HH=%dt:~8,2%"   & set "Min=%dt:~10,2%" & set "SS=%dt:~12,2%" & set "ff=%dt:~15,2%"
+set "fullstamp=%YYYY%-%mm%-%dd%_%HH%-%Min%-%SS%-%ff%"
 
 set output=%fullstamp%_output_concat.mp4
 for %%i In (*.mp4) do echo file %%i >> lista_clips.txt
